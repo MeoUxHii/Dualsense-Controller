@@ -1,5 +1,5 @@
 {
-    ".authorMsg": "- Bản dịch tiếng Trung do <a href='https://github.com/Yyiyun'>Eythavon</a>  <a href='https://space.bilibili.com/7173897'>坩埚钳特大号</a>  <a href='https://space.bilibili.com/185181540'>修手柄的小丁</a> cung cấp",
+    ".authorMsg": "- Bản dịch tiếng Việt do MeoU cung cấp",
     "DualShock Calibration GUI": "Giao diện Hiệu chỉnh Tay cầm",
     "Unsupported browser. Please use a web browser with WebHID support (e.g. Chrome).": "Trình duyệt không được hỗ trợ. Vui lòng sử dụng trình duyệt có hỗ trợ WebHID (ví dụ: Chrome).",
     "Connect": "Kết nối",
@@ -311,3 +311,4 @@
     "to increase the non-circularity.": "để tăng độ không tròn.",
     "": ""
 }
+
