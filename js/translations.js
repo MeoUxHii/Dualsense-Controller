@@ -4,6 +4,7 @@ import { la, createCookie, readCookie } from './utils.js';
 
 // Alphabetical order
 const available_langs = {
+  "vi_vn": { "name": "اTiếng Việt", "file": "vi_vn.json", "direction": "ltr"},
   "ar_ar": { "name": "العربية", "file": "ar_ar.json", "direction": "rtl"},
   "bg_bg": { "name": "Български", "file": "bg_bg.json", "direction": "ltr"},
   "cz_cz": { "name": "Čeština", "file": "cz_cz.json", "direction": "ltr"},
