@@ -31,8 +31,8 @@ var available_langs = {
 Once you have completed the translation, you can contribute it in one of the following ways:
 
 - **Pull Request (PR)**: Open a Pull Request with the changes.
-- **Discord**: Send the translated file to `the_al` on Discord.
-- **Email**: Send the translated file to `ds4@the.al` via email.
+- **Discord**: Send the translated file to `meou7347` on Discord.
+- **Email**: Send the translated file to `lmtc1907@gmail.com` via email.
 
 Feel free to adjust any details or formatting according to your preferences!
 
