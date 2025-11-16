@@ -65,7 +65,14 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenuButton"  id="availLangs">
             </ul>
           </li>
-        </ul>
+
+          <li class="nav-item ms-md-2">
+            <a class="nav-link" href="#" id="theme-toggle" title="Chuyển đổi theme">
+              <i class="fas fa-moon" id="theme-icon-dark"></i>
+              <i class="fas fa-sun" id="theme-icon-light" style="display: none;"></i>
+            </a>
+          </li>
+          </ul>
       </div>
 
     </div>
@@ -132,7 +139,7 @@
 
               <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-outline-primary ds-btn mb-3" onclick="show_quick_test_modal()" id="quick-test-btn">
-                  <i class="fas fa-vial" id="quick-test-icon"></i>&nbsp;&Dagger;
+                  <i class="fas fa-vial" id="quick-test-icon"></i>&nbsp;&nbsp;
                   <span id="quick-test-text" class="ds-i18n">Quick Test</span>
                 </button>
               </div>
@@ -215,7 +222,7 @@
             <div class="row">
               <div class="col-lg-12 col-xl-6 py-3">
                 <div class="card">
-                  <h5 class="card-header"><i class="fas fa-code"></i>&nbsp;&ds-i18n">Software</span></h5>
+                  <h5 class="card-header"><i class="fas fa-code"></i>&nbsp;&nbsp;<span class="ds-i18n">Software</span></h5>
                   <div class="card-body">
                     <dl class="row" id="fwinfoextra-fw"></dl>
                   </div>
@@ -279,14 +286,15 @@
   <footer class="fixed-bottom bg-body-tertiary border-top">
     <div class="container">
       <div class="d-flex flex-column flex-sm-row justify-content-between py-3" id="footbody">
-        <p class="mb-0"><a target="_blank" href="https://github.com/MeoUxHii/Dualsense-Controller/commits/main/"><span class="ds-i18n">Version</span> 2.19</a> (2025-10-18) - <a href="#" class="ds-i18n" onclick="show_donate_modal();">Support this project</a>&nbsp;<span id="authorMsg"></span></p>
+        <p class="mb-0"><a target="_blank" href="https://github.com/dualshock-tools/dualshock-tools.github.io/commits/main/"><span class="ds-i18n">Version</span> 2.19</a> (2025-10-18) - <a href="#" class="ds-i18n" onclick="show_donate_modal();">Support this project</a>&nbsp;<span id="authorMsg"></span></p>
 
         <ul class="list-unstyled d-flex mb-0">
           <li class="ms-3"><a class="link-body-emphasis" href="mailto:lmtc1907@gmail.com" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#mail"/></svg></a></li>
           <li class="ms-3"><a class="link-body-emphasis" href="https://discord.gg/vcPguxKf" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#discord"/></svg></a></li>
           <li class="ms-3"><a class="link-body-emphasis" href="https://github.com/MeoUxHii/Dualsense-Controller" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
         </ul>
-        </div>
+
+      </div>
     </div>
   </footer>
 
@@ -300,5 +308,49 @@
 
   // The gboot() function is now auto-called when the core.js module loads
   // No manual initialization needed here
+</script>
+
+<script>
+  (function() {
+    // === CÀI ĐẶT ===
+    const htmlElement = document.documentElement;
+    const toggleButton = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const lightIcon = document.getElementById('theme-icon-light');
+
+    if (!toggleButton || !darkIcon || !lightIcon) {
+      console.error('Không tìm thấy các thành phần của theme toggle.');
+      return;
+    }
+
+    // === HÀM CẬP NHẬT ICON ===
+    function updateIcon(theme) {
+      darkIcon.style.display = (theme === 'dark') ? 'none' : 'inline-block';
+      lightIcon.style.display = (theme === 'dark') ? 'inline-block' : 'none';
+    }
+
+    // === HÀM ÁP DỤNG THEME ===
+    function applyTheme(theme) {
+      htmlElement.setAttribute('data-bs-theme', theme);
+      updateIcon(theme);
+      localStorage.setItem('theme', theme); // Lưu lựa chọn
+    }
+
+    // === KIỂM TRA LỰA CHỌN CŨ HOẶC THEME HỆ THỐNG ===
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = savedTheme ? savedTheme : (systemPrefersDark ? 'dark' : 'light');
+
+    // Áp dụng theme ngay khi tải trang
+    applyTheme(currentTheme);
+
+    // === XỬ LÝ SỰ KIỆN CLICK ===
+    toggleButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Lấy theme hiện tại và đổi sang cái còn lại
+      const newTheme = htmlElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+    });
+  })();
 </script>
 </html>
