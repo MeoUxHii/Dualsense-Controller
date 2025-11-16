@@ -1,4 +1,4 @@
-# DualShock Calibration GUI
+# Dualsense Calibration GUI
 
 A web-based calibration tool for PlayStation DualShock 4, DualSense, and DualSense Edge controllers using the WebHID API.
 
