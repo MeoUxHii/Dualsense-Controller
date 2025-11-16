@@ -118,25 +118,43 @@ dl.row dd {
   color: red;
 } */
 
+
 /*
 ==================================
-DARK MODE STYLES
+DARK MODE STYLES (ĐÃ SỬA LỖI)
 ==================================
 */
 
-/* Override background color for .text-bg-light cards in dark mode */
+/*
+ * 1. Sửa card mặc định (như tab "Info")
+ * Nó đang bị nền trắng, chữ đen.
+*/
+[data-bs-theme="dark"] .card {
+  background-color: var(--bs-card-bg); /* Dùng biến chuẩn của BS */
+  color: var(--bs-body-color); /* Dùng biến chuẩn của BS */
+}
+
+/*
+ * 2. Sửa card .text-bg-light (như "Controller Info")
+ * Class này dùng !important, nên ta cũng phải dùng !important.
+*/
 [data-bs-theme="dark"] .text-bg-light {
   background-color: var(--bs-dark-bg-subtle) !important;
   color: var(--bs-dark-text) !important;
 }
 
-/* Customize navbar and footer background in dark mode */
+/*
+ * 3. Sửa Navbar/Footer (Giữ nguyên)
+*/
 [data-bs-theme="dark"] .navbar.bg-body-tertiary,
 [data-bs-theme="dark"] .fixed-bottom.bg-body-tertiary {
    background-color: var(--bs-dark-bg-subtle) !important;
 }
 
-/* Fix text color for <pre> elements (joystick values) in dark mode */
+/*
+ * 4. Sửa màu chữ <pre> (chỗ LX, LY...)
+ * Cho nó kế thừa màu từ card cha của nó.
+*/
 [data-bs-theme="dark"] pre {
-  color: var(--bs-body-color);
+  color: inherit;
 }
