@@ -38,7 +38,6 @@
 <link rel="shortcut icon" href="/favicon.ico" />
 <meta name="apple-mobile-web-app-title" content="DS Tools" />
 
-<!-- External CSS files -->
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/finetune.css">
 
@@ -66,6 +65,14 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenuButton"  id="availLangs">
             </ul>
           </li>
+          
+          <li class="nav-item ms-md-2">
+            <a class="nav-link" href="#" id="theme-toggle" title="Chuyển đổi theme">
+              <i class="fas fa-moon" id="theme-icon-dark"></i>
+              <i class="fas fa-sun" id="theme-icon-light" style="display: none;"></i>
+            </a>
+          </li>
+          
         </ul>
       </div>
 
@@ -106,11 +113,6 @@
             <i class="fas fa-gamepad"></i>&nbsp;&nbsp;<span class="ds-i18n">Calibration</span>
           </button>
         </li>
-        <!-- <li class="nav-item" role="presentation">
-          <button class="nav-link" id="tests-tab" data-bs-toggle="tab" data-bs-target="#tests-content" type="button" role="tab" aria-controls="tests-content" aria-selected="false">
-            <i class="fas fa-vial"></i>&nbsp;&nbsp;<span class="ds-i18n">Tests</span>
-          </button>
-        </li> -->
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info-content" type="button" role="tab" aria-controls="info-content" aria-selected="false">
             <i class="fas fa-info-circle"></i>&nbsp;&nbsp;<span class="ds-i18n">Info</span>
@@ -125,7 +127,6 @@
 
       <div class="tab-content" id="mainTabsContent">
         <div class="tab-pane show active" id="controller-content" role="tabpanel" aria-labelledby="controller-tab">
-          <!-- Main page content (controller info, calibration, joystick info) -->
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <div class="card text-bg-light" >
@@ -145,7 +146,6 @@
               </div>
 
               <div class="text-center mx-3" id="controller-svg-container">
-                <!-- DualSense 5 Controller SVG loaded from template -->
                 <div id="controller-svg-placeholder"></div>
               </div>
             </div>
@@ -218,34 +218,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="tab-pane" id="tests-content" role="tabpanel" aria-labelledby="tests-tab">
-          <div class="card text-bg-light mt-3" style="min-height: 500px;">
-            <div class="card-header">
-              <i class="fas fa-vial"></i>&nbsp;&nbsp;<span class="ds-i18n">Tests</span>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-4">
-                  <div class="list-group" id="tests-list" role="tablist">
-                    <a class="list-group-item list-group-item-action active ds-i18n" id="haptic-test-tab" data-bs-toggle="list" href="#haptic-test-pane">Haptic Motors</a>
-                  </div>
-                </div>
-                <div class="col-8">
-                  <div class="bg-white border rounded-3 p-4">
-                    <div class="tab-content">
-                      <div class="tab-pane show active" id="haptic-test-pane" role="tabpanel" aria-labelledby="haptic-test-tab">
-                        <h5 class="ds-i18n">Test the Haptic Motors</h5>
-                        <p class="ds-i18n">Press L2 to test the strong (left) haptic motor</p>
-                        <p class="ds-i18n">Press R2 to test the weak (right) haptic motor</p>
-                        <p class="ds-i18n">The motor strength will match how hard you press the trigger</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <div class="tab-pane" id="info-content" role="tabpanel" aria-labelledby="info-tab">
           <div class="container-fluid py-4">
             <div class="row">
@@ -305,16 +277,13 @@
     </div>
   </div>
 
-  <!-- Alert Messages Container -->
   <div class="container-fluid fixed-bottom " style="z-index: 1040; pointer-events: none; bottom: 70px;">
     <div class="container">
       <div id="alert-container" class="mb-3" style="pointer-events: auto;">
-        <!-- Alert messages will be dynamically inserted here -->
-      </div>
+        </div>
     </div>
   </div>
 
-  <!-- Fixed Footer -->
   <footer class="fixed-bottom bg-body-tertiary border-top">
     <div class="container">
       <div class="d-flex flex-column flex-sm-row justify-content-between py-3" id="footbody">
@@ -329,8 +298,44 @@
     </div>
   </footer>
 
+<script>
+  (function() {
+    const htmlElement = document.documentElement;
+    const toggleButton = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const lightIcon = document.getElementById('theme-icon-light');
+
+    if (!toggleButton || !darkIcon || !lightIcon) {
+      console.error('Theme toggle elements not found.');
+      return;
+    }
+
+    function updateIcon(theme) {
+      darkIcon.style.display = (theme === 'dark') ? 'none' : 'inline-block';
+      lightIcon.style.display = (theme === 'dark') ? 'inline-block' : 'none';
+    }
+
+    function applyTheme(theme) {
+      htmlElement.setAttribute('data-bs-theme', theme);
+      updateIcon(theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = savedTheme ? savedTheme : (systemPrefersDark ? 'dark' : 'light');
+
+    applyTheme(currentTheme);
+
+    toggleButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const newTheme = htmlElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+    });
+  })();
+</script>
+
 </body>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSXPMDXLLS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
