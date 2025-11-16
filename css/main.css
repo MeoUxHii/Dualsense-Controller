@@ -117,3 +117,26 @@ dl.row dd {
 /* .ds-i18n {
   color: red;
 } */
+
+/*
+==================================
+DARK MODE STYLES
+==================================
+*/
+
+/* Override background color for .text-bg-light cards in dark mode */
+[data-bs-theme="dark"] .text-bg-light {
+  background-color: var(--bs-dark-bg-subtle) !important;
+  color: var(--bs-dark-text) !important;
+}
+
+/* Customize navbar and footer background in dark mode */
+[data-bs-theme="dark"] .navbar.bg-body-tertiary,
+[data-bs-theme="dark"] .fixed-bottom.bg-body-tertiary {
+   background-color: var(--bs-dark-bg-subtle) !important;
+}
+
+/* Fix text color for <pre> elements (joystick values) in dark mode */
+[data-bs-theme="dark"] pre {
+  color: var(--bs-body-color);
+}
