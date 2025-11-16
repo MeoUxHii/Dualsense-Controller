@@ -1,6 +1,6 @@
 {
     ".authorMsg": "- Bản dịch tiếng Việt được cung cấp bởi MeoU",
-    "DualShock Calibration GUI": "Hiệu Chỉnh DualSense Controller (GUI)",
+    "DualShock Calibration GUI": "DualSense Controller",
     "Unsupported browser. Please use a web browser with WebHID support (e.g. Chrome).": "Trình duyệt không được hỗ trợ. Vui lòng sử dụng trình duyệt có hỗ trợ WebHID (ví dụ: Google Chrome).",
     "Connect": "Kết Nối",
     "Connected to:": "Đã kết nối với:",
@@ -315,3 +315,4 @@
     "This test will activate the controller's vibration motors, first the heavy one, and then the light one.": "Bài kiểm tra này sẽ kích hoạt các mô-tơ rung của tay cầm, trước tiên là mô-tơ mạnh, sau đó là mô-tơ nhẹ",
     "": ""
 }
+
