@@ -54,14 +54,23 @@ export function lang_init(appState, handleLanguageChangeCb, welcomeModalCb) {
       console.error("Failed to set forced language:", error);
     });
   } else {
+    // ================== ĐÃ SỬA Ở ĐÂY ==================
     const nlang = navigator.language.replace('-', '_').toLowerCase();
     const ljson = available_langs[nlang];
     if(ljson) {
+      // Nếu ngôn ngữ trình duyệt được hỗ trợ (vd: fr_fr, jp_jp...) -> tải ngôn ngữ đó
       la("lang_init", {"l": nlang});
       lang_translate(ljson["file"], nlang, ljson["direction"]).catch(error => {
         console.error("Failed to load initial language:", error);
       });
+    } else {
+      // Nếu không (ví dụ: en_us), thì mặc định tải 'vi_vn'
+      la("lang_init", {"l": "vi_vn (default)"});
+      lang_translate(available_langs["vi_vn"].file, "vi_vn", available_langs["vi_vn"].direction).catch(error => {
+        console.error("Failed to load default Vietnamese language:", error);
+      });
     }
+    // ================== KẾT THÚC SỬA ==================
   }
   
   const langs = Object.keys(available_langs);
