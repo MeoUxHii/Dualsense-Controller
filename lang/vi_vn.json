@@ -1,5 +1,5 @@
 {
-    ".authorMsg": "- Bản dịch tiếng Việt được cung cấp bởi MeoU",
+    ".authorMsg": "- Phiên bản được phát triển bởi MeoU",
     "DualShock Calibration GUI": "DualSense Controller",
     "Unsupported browser. Please use a web browser with WebHID support (e.g. Chrome).": "Trình duyệt không được hỗ trợ. Vui lòng sử dụng trình duyệt có hỗ trợ WebHID (ví dụ: Google Chrome).",
     "Connect": "Kết Nối",
@@ -78,8 +78,8 @@
     "Have a nice day :)": "Chúc bạn một ngày tốt lành! :)",
     "Welcome to the Calibration GUI": "Chào mừng bạn đến với Giao Diện Hiệu Chỉnh (GUI)",
     "Just few things to know before you can start:": "Một vài điều cần biết trước khi bạn bắt đầu:",
-    "This website is not affiliated with Sony, PlayStation &amp; co.": "Trang web này không liên kết với Sony, PlayStation hay các công ty liên quan.",
-    "This service is provided without warranty. Use at your own risk.": "Dịch vụ này được cung cấp không bảo hành. Bạn tự chịu rủi ro khi sử dụng nhé. ",
+    "This website is not affiliated with Sony, PlayStation &amp; co.": "Trang web này thuộc quyền sở hữu của MeoU đồng thời nó không phải là một sản phẩm chính thức từ Sony.",
+    "This service is provided without warranty. Use at your own risk.": "Công cụ này được cung cấp không bảo hành. Bạn sẽ tự chịu rủi ro khi sử dụng do đó hãy cân nhắc. ",
     "Keep the internal battery of the controller connected and ensure it is well charged. If the battery dies during operations, the controller will be damaged and rendered unusable.": "Đảm bảo pin đã được sạc đầy. Nếu hết pin trong quá trình thực hiện hiệu chỉnh, tay cầm có thể bị hỏng và không sử dụng được.",
     "Before doing the permanent calibration, try the temporary one to ensure that everything is working well.": "Trước khi thực hiện hiệu chỉnh vĩnh viễn, hãy thử hiệu chỉnh tạm thời trước để đảm bảo mọi thứ hoạt động tốt.",
     "Understood": "Đã rõ",
@@ -315,4 +315,5 @@
     "This test will activate the controller's vibration motors, first the heavy one, and then the light one.": "Bài kiểm tra này sẽ kích hoạt các mô-tơ rung của tay cầm, trước tiên là mô-tơ mạnh, sau đó là mô-tơ nhẹ",
     "": ""
 }
+
 
