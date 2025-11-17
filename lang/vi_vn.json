@@ -1,6 +1,6 @@
 {
     ".authorMsg": "- Phiên bản được phát triển bởi MeoU",
-    "DualShock Calibration GUI": "DualSense Controller",
+    "DualShock Calibration GUI": "DualSense Controller GUI by MeoU",
     "Unsupported browser. Please use a web browser with WebHID support (e.g. Chrome).": "Trình duyệt không được hỗ trợ. Vui lòng sử dụng trình duyệt có hỗ trợ WebHID (ví dụ: Google Chrome).",
     "Connect": "Kết Nối",
     "Connected to:": "Đã kết nối với:",
@@ -78,8 +78,8 @@
     "Have a nice day :)": "Chúc bạn một ngày tốt lành! :)",
     "Welcome to the Calibration GUI": "Chào mừng bạn đến với Giao Diện Hiệu Chỉnh (GUI)",
     "Just few things to know before you can start:": "Một vài điều cần biết trước khi bạn bắt đầu:",
-    "This website is not affiliated with Sony, PlayStation &amp; co.": "Trang web này thuộc quyền sở hữu của MeoU đồng thời nó không phải là một sản phẩm chính thức từ Sony.",
-    "This service is provided without warranty. Use at your own risk.": "Công cụ này được cung cấp không bảo hành. Bạn sẽ tự chịu rủi ro khi sử dụng do đó hãy cân nhắc. ",
+    "This website is not affiliated with Sony, PlayStation &amp; co.": "Bản quyền thuộc về MeoU®, vui lòng không sao chép.",
+    "This service is provided without warranty. Use at your own risk.": "Bạn sẽ tự chịu rủi ro khi sử dụng công cụ này bao gồm nguy cơ tay cầm bị hư hỏng do đó hãy cân nhắc. ",
     "Keep the internal battery of the controller connected and ensure it is well charged. If the battery dies during operations, the controller will be damaged and rendered unusable.": "Đảm bảo pin đã được sạc đầy. Nếu hết pin trong quá trình thực hiện hiệu chỉnh, tay cầm có thể bị hỏng và không sử dụng được.",
     "Before doing the permanent calibration, try the temporary one to ensure that everything is working well.": "Trước khi thực hiện hiệu chỉnh vĩnh viễn, hãy thử hiệu chỉnh tạm thời trước để đảm bảo mọi thứ hoạt động tốt.",
     "Understood": "Đã rõ",
@@ -114,7 +114,7 @@
     "DualShock 3": "DualShock 3",
     "XBox Controllers": "Tay cầm Xbox",
     "Each of these tasks presents both immense interest and significant time investment. To provide context, supporting a new controller typically demands 6-12 months of full-time research, alongside a stroke of good fortune.": "Mỗi nhiệm vụ này đều vô cùng thú vị nhưng cũng tốn rất nhiều thời gian. Để bạn dễ hình dung, việc hỗ trợ một tay cầm mới thường đòi hỏi từ 6 đến 12 tháng nghiên cứu toàn thời gian, cùng với một chút may mắn.",
-    "I love this service, it helped me! How can I contribute?": "Tôi thích dịch vụ này, nó đã giúp tôi! Làm thế nào tôi có thể đóng góp?",
+    "I love this service, it helped me! How can I contribute?": "Tôi thích dịch vụ này và tôi muốn ủng hộ dự án. Làm thế nào tôi có thể đóng góp?",
     "I'm glad to hear that you found this helpful! If you're interested in contributing, here are a few ways you can help me:": "Tôi rất vui khi biết bạn thấy nó hữu ích! Nếu bạn muốn đóng góp, đây là một vài cách bạn có thể giúp tôi:",
     "Consider making a": "Bạn có thể cân nhắc ",
     "donation": "quyên góp",
@@ -315,5 +315,6 @@
     "This test will activate the controller's vibration motors, first the heavy one, and then the light one.": "Bài kiểm tra này sẽ kích hoạt các mô-tơ rung của tay cầm, trước tiên là mô-tơ mạnh, sau đó là mô-tơ nhẹ",
     "": ""
 }
+
 
 
